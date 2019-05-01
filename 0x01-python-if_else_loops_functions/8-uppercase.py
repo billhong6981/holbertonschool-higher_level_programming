@@ -5,6 +5,6 @@ def uppercase(str):
         if val >= 97 and val <= 123:
             val = val - 32
         if i != len(str) - 1:
-            print(chr(val), end = "")
+            print('{:c}'.format(val), end = "")
         else:
-            print(chr(val))
+            print('{:c}'.format(val))
