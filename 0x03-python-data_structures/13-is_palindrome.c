@@ -33,20 +33,16 @@ void reverse_list(listint_t **h)
 int is_palindrome(listint_t **head)
 {
 	listint_t *current, *mid_last;
-	int len = 0, len_half;
 
-	current = *head;
-	while (current)
+	current = mid_last = *head;
+	while (1)
 	{
-		len++;
-		current = current->next;
+		if (!current->next || !current->next->next)
+			break;
+		current = current->next->next;
+		mid_last = mid_last->next;
 	}
-	len_half = (len % 2 == 0) ? len / 2 : len / 2 + 1;
-	current = *head;
-	while (--len_half)
-		current = current->next;
-	mid_last = current;
-	current = current->next;
+	current = mid_last->next;
 	reverse_list(&current);
 	mid_last->next = current;
 	current = *head;
