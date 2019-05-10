@@ -13,8 +13,7 @@ def roman_to_int(roman_string):
 
     # return 0 when string is None or not in roman number
     sum = 0
-    for roman in roman_string:
-        if roman not in 'IVXLCDM' or roman_string is None:
+    if type(roman_string) is not str or roman_string is None:
             return (sum)
 
     # set up a roman number dictionary
