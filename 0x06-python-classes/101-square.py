@@ -116,9 +116,10 @@ class Square:
                 string += (' '*self.position[0] + '#'*self.size)
         return (string)
 
-    def my_print(self):
+    @classmethod
+    def my_print(cls):
         """public method my_print print the square string
 
         """
 
-        print(self.square_string, end='')
+        print(cls.square_string, end='')
