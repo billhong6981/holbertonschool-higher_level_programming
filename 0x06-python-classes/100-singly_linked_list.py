@@ -36,7 +36,7 @@ class Node:
 
         """
 
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('data must be an integer')
         self.__data = value
 
@@ -46,6 +46,10 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
+        """Sets private instance attribute value
+
+        """
+
         if value is not None and type(value) != Node:
             raise TypeError('next_node must be a Node object')
         self.__next_node = value
