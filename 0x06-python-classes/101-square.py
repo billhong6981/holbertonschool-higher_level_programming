@@ -13,8 +13,8 @@ class Square:
 
         """
 
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -116,10 +116,9 @@ class Square:
                 string += (' '*self.position[0] + '#'*self.size)
         return (string)
 
-    @classmethod
-    def my_print(cls):
+    def my_print(self):
         """public method my_print print the square string
 
         """
 
-        print(cls.square_string, end='')
+        print(self.square_string(), end='')
