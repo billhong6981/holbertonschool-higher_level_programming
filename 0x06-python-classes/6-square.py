@@ -17,18 +17,6 @@ class Square:
         self.__position = position
 
     @property
-    def position(self):
-        """@property decorates getter function position to access
-           private variable __position value
-
-        Return:
-           return __position value
-
-        """
-
-        return self.__position
-
-    @property
     def size(self):
         """@property decorates getter function size to access
            private variable size value
@@ -56,6 +44,18 @@ class Square:
         if value < 0:
             raise ValueError('size must be >= 0')
         self.__size = value
+
+    @property
+    def position(self):
+        """@property decorates getter function position to access
+           private variable __position value
+
+        Return:
+           return __position value
+
+        """
+
+        return self.__position
 
     @position.setter
     def position(self, value):
@@ -92,6 +92,8 @@ class Square:
         """
 
         if self.size > 0:
+            for i in range(self.position[1]):
+                print()
             for i in range(self.size):
                 print(' '*self.position[0] + "#"*self.size)
         else:
