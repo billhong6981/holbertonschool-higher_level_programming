@@ -110,7 +110,10 @@ class Square:
         for j in range(self.position[1]):
             string += '\n'
         for i in range(self.size):
-            string += (' '*self.position[0] + '#'*self.size + '\n')
+            if i != self.size - 1:
+                string += (' '*self.position[0] + '#'*self.size + '\n')
+            else:
+                string += (' '*self.position[0] + '#'*self.size)
         return (string)
 
     @classmethod
