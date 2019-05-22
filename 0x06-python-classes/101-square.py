@@ -16,13 +16,6 @@ class Square:
         self.__size = size
         self.__position = position
 
-    def __str__(self):
-        """special method __str__ to be called before print
-
-        """
-
-        return (self.square_string())
-
     @property
     def size(self):
         """@property decorates getter function size to access
@@ -95,6 +88,13 @@ class Square:
 
         return self.size**2
 
+    def __str__(self):
+        """special method __str__ to be called before print
+
+        """
+
+        return (self.square_string())
+
     def square_string(self):
         """public method square_string stores the square to the string
 
@@ -113,9 +113,10 @@ class Square:
             string += (' '*self.position[0] + '#'*self.size + '\n')
         return (string)
 
-    def my_print(self):
+    @classmethod
+    def my_print(cls):
         """public method my_print print the square string
 
         """
 
-        print(self.square_string, end='')
+        print(cls.square_string, end='')
