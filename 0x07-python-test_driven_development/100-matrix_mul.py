@@ -16,10 +16,10 @@ def matrix_mul(m_a, m_b):
         raise TypeError('m_b must be a list')
     for sub in m_a:
         if not isinstance(sub, list):
-            TypeError('m_a must be a list of lists')
+            raise TypeError('m_a must be a list of lists')
     for sub in m_b:
         if not isinstance(sub, list):
-            TypeError('m_b must be a list of lists')
+            raise TypeError('m_b must be a list of lists')
     if len(m_a) == 0 or m_a is None:
         raise ValueError("m_a can't be empty")
     if len(m_a) == 0 or m_a is None:
