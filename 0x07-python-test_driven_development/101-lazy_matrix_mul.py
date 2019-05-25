@@ -1,10 +1,12 @@
+#!/usr/bin/python3
 """Nump Matrix Multification Module
 Args:
     m_a: matrix a
     m_b: matrix b
 """
-
 import numpy as np
+
+
 def lazy_matrix_mul(m_a, m_b):
     """a function makes two matrix multification
     Return:
@@ -42,5 +44,5 @@ def lazy_matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    res = np.dot(m_a,m_b)
+    res = np.dot(m_a, m_b)
     return res

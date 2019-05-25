@@ -1,8 +1,10 @@
+#!/usr/bin/python3
 """Matrix Multification Module
 Args:
     m_a: matrix a
     m_b: matrix b
 """
+
 
 def matrix_mul(m_a, m_b):
     """a function makes two matrix multification
@@ -41,6 +43,5 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    return [\
-            [sum(x*y for x, y in zip(m_a_r, m_b_c)) for m_b_c in zip(*m_b)] \
+    return [[sum(x*y for x, y in zip(m_a_r, m_b_c)) for m_b_c in zip(*m_b)]
             for m_a_r in m_a]

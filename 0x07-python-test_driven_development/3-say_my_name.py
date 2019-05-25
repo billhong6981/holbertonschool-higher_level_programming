@@ -1,8 +1,10 @@
+#!/usr/bin/python3
 """Say my name
 Args:
     first_name: string
     last_name: string
 """
+
 
 def say_my_name(first_name, last_name=""):
     """function prints my first name and last name

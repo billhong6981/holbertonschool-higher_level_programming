@@ -1,8 +1,10 @@
+#!/usr/bin/python3
 """Adds two integers
 Args:
     a: a integer
     b: b integer
 """
+
 
 def add_integer(a, b=98):
     """function makes addition of two integers
@@ -13,8 +15,8 @@ def add_integer(a, b=98):
         a = int(a)
     if type(b) is float:
         b = int(b)
-    if type(a) is not int: # raise TypeError when a is not int
+    if type(a) is not int:
         raise TypeError('a must be an integer')
-    if type(b) is not int: # raise TypeError when b is not int
+    if type(b) is not int:
         raise TypeError('b must be an integer')
     return (a + b)
