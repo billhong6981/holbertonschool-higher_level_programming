@@ -1,0 +1,80 @@
+The 0-add_integer Module
+========================
+
+Using "add_integer" function
+-----------------------------
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Check The Docstring:
+--------------------
+	>>> s = len(__import__("0-add_integer").__doc__)
+	>>> print(s > 0)
+	True
+
+	>>> s = len(__import__("0-add_integer").add_integer.__doc__)
+	>>> print(s > 0)
+	True
+
+Usage: add_integer(a, b)
+------------------------
+
+1. pass two 0, 0
+>>> add_integer(0, 0)
+0
+
+2. pass two integer numbers
+>>> add_integer(1, 2)
+3
+
+3. b be a negative number
+>>> add_integer(100, -2)
+98
+
+4. only pass a, (b was initial withe 98)
+>>> add_integer(2)
+100
+
+5. a was a float number
+>>> add_integer(100.3, 2)
+102
+
+Errors:
+6. no variable to pass
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+7. pass more than 2 value
+>>> add_integer(1, 2, 3, 4)
+Traceback (most recent call last):
+    File "/usr/lib/python3.4/doctest.py", line 1318, in __run
+      compileflags, 1), test.globs)
+    File "<doctest 0-add_integer.txt[11]>", line 1, in <module>
+    add_integer(1, 2, 3, 4)
+TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+8. pass two lists
+>>> add_integer([1, 2], [3, 4])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+9. pass string
+>>> add_integer(4, "school")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+10. only pass b
+>>> add_integer(None, 4)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+11. pass dictionary
+>>> add_integer({'a':2, 'b':3})
+Traceback (most recent call last):
+...
+TypeError: a must be an integer

@@ -1,0 +1,54 @@
+The 0-add_integer Module
+========================
+
+Using "add_integer" function
+-----------------------------
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Usage: add_integer(a, b)
+------------------------
+
+1. pass two integer numbers
+>>> add_integer(1, 2)
+3
+
+2. b is a negative number
+>>> add_integer(100, -2)
+98
+
+3. only pass a, (b was initial withe 98)
+>>> add_integer(2)
+100
+
+4. a is a float number
+>>> add_integer(100.3, 2)
+102
+
+Errors:
+5. no variable to pass
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+6. pass more than 2 variables
+>>> add_integer(1, 2, 3, 4)
+Traceback (most recent call last):
+    File "/usr/lib/python3.4/doctest.py", line 1318, in __run
+      compileflags, 1), test.globs)
+    File "<doctest 0-add_integer.txt[11]>", line 1, in <module>
+    add_integer(1, 2, 3, 4)
+TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+7. pass two lists
+>>> add_integer([1, 2], [3, 4])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+8. pass string
+>>> add_integer(4, "school")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
