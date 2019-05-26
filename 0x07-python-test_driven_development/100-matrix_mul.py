@@ -24,7 +24,7 @@ def matrix_mul(m_a, m_b):
             raise TypeError('m_b must be a list of lists')
     if len(m_a) == 0 or m_a is None:
         raise ValueError("m_a can't be empty")
-    if len(m_a) == 0 or m_a is None:
+    if len(m_b) == 0 or m_a is None:
         raise ValueError("m_b can't be empty")
     b = [a for sub in m_a for a in sub]
     for i in b:
