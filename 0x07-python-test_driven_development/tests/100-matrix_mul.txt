@@ -4,7 +4,13 @@ The 100-matrix_mul Module
 Using "matrix_mul" function
 -------------------------------
 
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> __import__('100-matrix_mul').__doc__ is not None
+True
+
+>>> matrix_mul.__doc__ is not None
+True
 
 Usage: matrix_mul(m_a, m_b)
 ----------------------------
@@ -25,12 +31,12 @@ Traceback (most recent call last):
 ...
 TypeError: m_b must be a list of lists
 
->>> matrix_mul([[1, 2], [2, 3]], 3)
+>>> matrix_mul([[1, 2], [2, 3]], "Holberton")
 Traceback (most recent call last):
 ...
 TypeError: m_b must be a list
 
->>> matrix_mul(2, [[1, 2], [2, 3]])
+>>> matrix_mul("Holberton", [[1, 2], [2, 3]])
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list
@@ -41,6 +47,16 @@ Traceback (most recent call last):
 TypeError: m_a should contain only integers or floats
 
 >>> matrix_mul([None], [[1, 2], [2, 3]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+>>> matrix_mul([[1, 2], [2, 3]], [1, 2, 3, 4])
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+>>> matrix_mul([1, 2, 3, 4], [[1, 2], [2, 3]])
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list of lists
@@ -60,7 +76,17 @@ Traceback (most recent call last):
 ...
 TypeError: each row of m_a must should be of the same size
 
+>>> matrix_mul([[1, 2], [2, 3]], [[3, 2, 5], [1, 3]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must should be of the same size
+
 >>> matrix_mul([[]], [[1, 2], [2, 3]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+
+>>> matrix_mul([[1, 2], [2, 3]], [[]])
 Traceback (most recent call last):
 ...
 ValueError: m_a and m_b can't be multiplied
