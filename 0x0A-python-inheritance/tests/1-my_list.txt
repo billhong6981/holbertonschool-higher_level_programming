@@ -1,0 +1,41 @@
+Test File
+==========
+
+Documentation Testing:
+-----------------------
+
+>>> MyList = __import__("1-my_list").MyList
+
+>>> __import__("1-my_list").__doc__ is not None
+True
+
+>>> __import__("1-my_list").MyList.__doc__ is not None
+True
+
+>>> __import__("1-my_list").MyList.__init__.__doc__ is not None
+True
+
+>>> __import__("1-my_list").MyList.print_sorted.__doc__ is not None
+True
+
+Object Testing:
+---------------
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(5)
+>>> my_list.append(4)
+>>> my_list.append(3)
+
+>>> print(my_list)
+[1, 2, 5, 4, 3]
+
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> my_list.append("abc")
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: str() < int()

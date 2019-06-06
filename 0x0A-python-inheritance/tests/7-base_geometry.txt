@@ -1,0 +1,44 @@
+Test File
+==========
+
+Documentation Testing:
+-----------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> __import__('7-base_geometry').__doc__ is not None
+True
+
+>>> __import__('7-base_geometry').BaseGeometry.__doc__ is not None
+True
+
+>>> __import__('7-base_geometry').BaseGeometry.area.__doc__ is not None
+True
+
+>>> __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__ is not None
+True
+
+Object Testing:
+---------------
+
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("my_int", 1)
+
+>>> bg.integer_validator("width", 100)
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+...
+ValueError: distance must be greater than 0
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
