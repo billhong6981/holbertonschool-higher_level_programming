@@ -24,12 +24,18 @@ def main():
         for line in sys.stdin:
             n += 1
             l_s = line.split()
-            size += int(l_s[-1])
-            status = l_s[-2]
-            if status in dic:
-                dic[status] += 1
-                if n % 10 == 0:
-                    print_fn(dic, size)
+            try:
+                size += int(l_s[-1])
+            except:
+                pass
+            try:
+                status = l_s[-2]
+                if status in dic:
+                    dic[status] += 1
+            except:
+                pass
+            if n % 10 == 0:
+                print_fn(dic, size)
     except KeyboardInterrupt:
         print_fn(dic, size)
         raise
