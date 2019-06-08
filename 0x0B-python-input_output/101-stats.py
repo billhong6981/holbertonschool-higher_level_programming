@@ -36,6 +36,7 @@ def main():
                 pass
             if n % 10 == 0:
                 print_fn(dic, size)
+        print_fn(dic, size)
     except KeyboardInterrupt:
         print_fn(dic, size)
         raise
