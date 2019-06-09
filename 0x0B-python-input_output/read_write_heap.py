@@ -20,8 +20,8 @@ if __name__ == "__main__":
     search_string = str(sys.argv[2])
     if search_string == "":
         print_usage_and_exit()
-    write_string = str(sys.argv[3])
-    if write_string == "":
+    replace_string = str(sys.argv[3])
+    if replace_string == "":
         print_usage_and_exit()
 
     # open the maps and mem files of the process
@@ -34,10 +34,10 @@ if __name__ == "__main__":
         print(e)
         sys.exit(1)
     for line in maps_file:
-        sline = line.split(' ')
-        if sline[-1][:-1] != "[stack]":
+        sline = line.split()
+        if sline[-1] != "[heap]":
             continue
-        # found [stack]
+        # found [heap]
         addr = sline[0]
         perm = sline[1]
         if perm[0] != 'r' or perm[1] != 'w':
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         # get memory address
         addr = addr.split("-")
         if len(addr) != 2:
-            print(" [*] wrong address")
+            print(" [*] wrong address\n")
             maps_file.close()
             sys.exit(1)
         addr_start = int(addr[0], 16)
@@ -62,11 +62,12 @@ if __name__ == "__main__":
             maps_file.close()
             sys.exit(1)
         mem_file.seek(addr_start)
-        stack = mem_file.read(addr_end - addr_start)
+        heap = mem_file.read(addr_end - addr_start)
 
         # find string
         try:
-            i = stack.index(bytes(search_string, "ASCII"))
+            i = heap.index(bytes(search_string, "ASCII"))
+            print("what is i: [{}], and index do".format(i))
         except Exception:
             print("Can't find '{}'".format(search_string))
             maps_file.close()
@@ -77,6 +78,5 @@ if __name__ == "__main__":
         # write the new string
         mem_file.seek(addr_start + i)
         mem_file.write(bytes(replace_string, "ASCII"))
-
+        print("replace: [{}]\n".format(replace_string))
         mem_file.close()
-        break
