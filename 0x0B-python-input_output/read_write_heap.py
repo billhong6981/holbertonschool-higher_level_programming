@@ -77,6 +77,9 @@ if __name__ == "__main__":
 
         # write the new string
         mem_file.seek(addr_start + i)
+        if len(search_string) > len(replace_string):
+            n = len(search_string) - len(replace_string)
+            replace_string = replace_string + " " * n
         mem_file.write(bytes(replace_string, "ASCII"))
         print("replace: [{}]\n".format(replace_string))
         mem_file.close()
