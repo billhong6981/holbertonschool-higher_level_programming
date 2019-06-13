@@ -52,7 +52,7 @@ class Base:
             dummy.update(**dictionary)
             return dummy
         if cls.__name__ is "Square":
-            dummy = cls(1, 2)
+            dummy = cls(1)
             dummy.update(**dictionary)
             return dummy
 
