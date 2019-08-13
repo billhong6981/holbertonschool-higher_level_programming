@@ -14,7 +14,8 @@ def list_states():
         }
     db = MySQLdb.connect(**kwargs)
     db = db.cursor()
-    db.execute("""SELECT * FROM states WHERE name=%s ORDER BY id""", (argv[4],))
+    db.execute("""SELECT * FROM states WHERE name=%s ORDER BY id""",
+               (argv[4],))
     z = db.fetchall()
     for i in z:
         print(i)
