@@ -9,7 +9,7 @@ def list_states():
     kwargs = {
         "host": "localhost",
         "user": argv[1],
-        "passwd": argv[2],
+        "passwd": argv[2]
         "db": argv[3]
         }
     conn = MySQLdb.connect(**kwargs)
