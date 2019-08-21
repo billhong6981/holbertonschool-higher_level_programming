@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """my module"""
 
+
 def find_peak(list_of_integers):
     """my function"""
     if list_of_integers:
