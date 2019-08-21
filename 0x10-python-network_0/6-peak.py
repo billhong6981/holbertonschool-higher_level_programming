@@ -4,10 +4,22 @@
 
 def find_peak(list_of_integers):
     """my function"""
-    if list_of_integers:
-        peak = list_of_integers[0]
-        for i in range(len(list_of_integers)):
-            if peak < list_of_integers[i]:
-                peak = list_of_integers[i]
-        return (peak)
-    return (None)
+    if len(list_of_integers) == 0:
+        return (None)
+    if len(list_of_integers) == 1:
+        return (list_of_integers[0])
+    binary_list = []
+    j = len(list_of_integers) - 1
+    i = 0
+    while (i < j):
+        if list_of_integers[i] > list_of_integers[j]:
+            temp = list_of_integers[i]
+        else:
+            temp = list_of_integers[j]
+        binary_list.append(temp)
+        i += 1
+        j -= 1
+        if (i == j):
+            binary_list.append(list_of_integers[j])
+            break
+    return (find_peak(binary_list))
