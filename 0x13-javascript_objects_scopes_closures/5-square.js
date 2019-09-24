@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//child class Square inherited from Rectangle
+// child class Square inherited from Rectangle
 const Rectangle = require('./4-rectangle');
 
 class Square extends Rectangle {

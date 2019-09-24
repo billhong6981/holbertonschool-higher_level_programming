@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//a function that returns reversed a list
+// a function that returns reversed a list
 
 exports.esrever = function (list) {
   if (!list) {

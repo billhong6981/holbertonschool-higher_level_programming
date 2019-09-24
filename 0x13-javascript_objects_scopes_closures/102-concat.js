@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//a script that concats 2 files.
+// a script that concats 2 files.
 
 const order = `cat ${process.argv[2]} ${process.argv[3]} > ${process.argv[4]}`;
 

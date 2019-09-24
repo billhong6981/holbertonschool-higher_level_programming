@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//computes user_id occurrences
+// computes user_id occurrences
 
 const dict = require('./101-data').dict;
 
