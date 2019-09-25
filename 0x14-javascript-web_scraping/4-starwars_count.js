@@ -6,16 +6,6 @@ const requestURL = process.argv[2];
 
 request(requestURL, (err, response, body) => {
   if (err) throw err;
-  const dict = JSON.parse(body);
-  const results = dict.results;
-  let count = 0;
-  results.forEach(result => {
-    const character = result.characters;
-    for (let i = 0; i < character.length; i++) {
-      if (character[i] === 'https://swapi.co/api/people/18/') {
-        count++;
-      }
-    }
-  });
-  console.log(count);
+  const myRe = /https:\/\/swapi.co\/api\/people\/18\//g;
+  console.log(body.match(myRe).length);
 });
